@@ -45,7 +45,7 @@ const dailyUpdate = async ()=>{
             batchname:batch.batchname,
         }
         // console.log(batchData);
-        await axios.post('http://localhost:5000/score/fetchScores', batchData, {
+        await axios.post('https://resultanalysis-server.onrender.com/score/fetchScores', batchData, {
             headers: {'Content-Type' : 'application/json'}
         })
         .then(res => {

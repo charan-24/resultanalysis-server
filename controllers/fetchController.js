@@ -37,7 +37,7 @@ const fetchNewBatchScores = asyncHandler(async (req,res)=>{
     for(let i=0;i<users.length;i++){
         //fetch from hackerrank
         const user = users[i];
-        hr = await axios.get('http://localhost:'+process.env.PORT+'/fetch/hr/'+user.profiles.hackerrank.username);
+        hr = await axios.get('https://resultanalysis-server.onrender.com/fetch/hr/'+user.profiles.hackerrank.username);
         hr = hr.data.payload;
         if(!hr.ds_score){
             hr.ds_score=0;
@@ -57,7 +57,7 @@ const fetchNewBatchScores = asyncHandler(async (req,res)=>{
         user.profiles.hackerrank.scores = hrscore;
 
         //fetch from leetcode
-        lc = await axios.get('http://localhost:'+process.env.PORT+'/fetch/lc/'+user.profiles.leetcode.username);
+        lc = await axios.get('https://resultanalysis-server.onrender.com/fetch/lc/'+user.profiles.leetcode.username);
         lc = lc.data.payload;
         if(!lc.noOfProblemsSolved){
             lc.noOfProblemsSolved = 0;
@@ -80,7 +80,7 @@ const fetchNewBatchScores = asyncHandler(async (req,res)=>{
         
 
         //fetch from codechef
-        cc = await axios.get('http://localhost:'+process.env.PORT+'/fetch/cc/'+user.profiles.codechef.username);
+        cc = await axios.get('https://resultanalysis-server.onrender.com/fetch/cc/'+user.profiles.codechef.username);
         cc = cc.data.payload;
         if(!cc.noOfProblemsSolved){
             cc.noOfProblemsSolved = 0;
@@ -104,7 +104,7 @@ const fetchNewBatchScores = asyncHandler(async (req,res)=>{
         user.profiles.codechef.scores = ccscore;
 
         //fetch from codeforces
-        cf = await axios.get('http://localhost:'+process.env.PORT+'/fetch/cf/'+user.profiles.codeforces.username);
+        cf = await axios.get('https://resultanalysis-server.onrender.com/fetch/cf/'+user.profiles.codeforces.username);
         cf = cf.data.payload;
         if(!cf.noOfProblemsSolved){
             cf.noOfProblemsSolved = 0;
@@ -129,7 +129,7 @@ const fetchNewBatchScores = asyncHandler(async (req,res)=>{
         
 
         //fetch from interviewbit       
-        ib = await axios.get('http://localhost:'+process.env.PORT+'/fetch/ib/'+user.profiles.interviewbit.username);
+        ib = await axios.get('https://resultanalysis-server.onrender.com/fetch/ib/'+user.profiles.interviewbit.username);
         ib = ib.data.payload;
         if(!ib.noOfProblemsSolved){
             ib.noOfProblemsSolved = 0;
@@ -143,7 +143,7 @@ const fetchNewBatchScores = asyncHandler(async (req,res)=>{
         user.profiles.interviewbit.scores = ibscore;
         
         //fetch from spoj     
-        spoj = await axios.get('http://localhost:'+process.env.PORT+'/fetch/spoj/'+user.profiles.spoj.username);
+        spoj = await axios.get('https://resultanalysis-server.onrender.com/fetch/spoj/'+user.profiles.spoj.username);
         spoj = spoj.data.payload;
         if(!spoj.noOfProblemsSolved){
             spoj.noOfProblemsSolved = 0;
@@ -190,7 +190,7 @@ const fetchScore = asyncHandler(async (req,res)=>{
     for(let i=0;i<users.length;i++){
         //fetch from hackerrank
         const user = users[i];
-        hr = await axios.get('http://localhost:'+process.env.PORT+'/fetch/hr/'+user.profiles.hackerrank.username);
+        hr = await axios.get('https://resultanalysis-server.onrender.com/fetch/hr/'+user.profiles.hackerrank.username);
         hr = hr.data.payload;
         if(!hr.ds_score){
             hr.ds_score=0;
@@ -210,7 +210,7 @@ const fetchScore = asyncHandler(async (req,res)=>{
         user.profiles.hackerrank.scores = hrscore;
 
         //fetch from leetcode
-        lc = await axios.get('http://localhost:'+process.env.PORT+'/fetch/lc/'+user.profiles.leetcode.username);
+        lc = await axios.get('https://resultanalysis-server.onrender.com/fetch/lc/'+user.profiles.leetcode.username);
         lc = lc.data.payload;
         if(!lc.noOfProblemsSolved){
             lc.noOfProblemsSolved = 0;
@@ -235,7 +235,7 @@ const fetchScore = asyncHandler(async (req,res)=>{
         
 
         //fetch from codechef
-        cc = await axios.get('http://localhost:'+process.env.PORT+'/fetch/cc/'+user.profiles.codechef.username);
+        cc = await axios.get('https://resultanalysis-server.onrender.com/fetch/cc/'+user.profiles.codechef.username);
         cc = cc.data.payload;
         if(!cc.noOfProblemsSolved){
             cc.noOfProblemsSolved = 0;
@@ -259,7 +259,7 @@ const fetchScore = asyncHandler(async (req,res)=>{
         user.profiles.codechef.scores = ccscore;
 
         //fetch from codeforces
-        cf = await axios.get('http://localhost:'+process.env.PORT+'/fetch/cf/'+user.profiles.codeforces.username);
+        cf = await axios.get('https://resultanalysis-server.onrender.com/fetch/cf/'+user.profiles.codeforces.username);
         cf = cf.data.payload;
         if(!cf.noOfProblemsSolved){
             cf.noOfProblemsSolved = 0;
@@ -284,7 +284,7 @@ const fetchScore = asyncHandler(async (req,res)=>{
         
 
         //fetch from interviewbit       
-        ib = await axios.get('http://localhost:'+process.env.PORT+'/fetch/ib/'+user.profiles.interviewbit.username);
+        ib = await axios.get('https://resultanalysis-server.onrender.com/fetch/ib/'+user.profiles.interviewbit.username);
         ib = ib.data.payload;
         if(!ib.noOfProblemsSolved){
             ib.noOfProblemsSolved = 0;
@@ -300,7 +300,7 @@ const fetchScore = asyncHandler(async (req,res)=>{
         user.profiles.interviewbit.scores = ibscore;
         
         //fetch from spoj     
-        spoj = await axios.get('http://localhost:'+process.env.PORT+'/fetch/spoj/'+user.profiles.spoj.username);
+        spoj = await axios.get('https://resultanalysis-server.onrender.com/fetch/spoj/'+user.profiles.spoj.username);
         spoj = spoj.data.payload;
         if(!spoj.noOfProblemsSolved){
             spoj.noOfProblemsSolved = 0;
@@ -356,7 +356,7 @@ const fetchNewUserScore = asyncHandler(async (req,res)=>{
         //fetch from hackerrank
         // console.log(currusers[i].profiles);
         const user = currusers[i];
-        hr = await axios.get('http://localhost:'+process.env.PORT+'/fetch/hr/'+user.profiles.hackerrank.username);
+        hr = await axios.get('https://resultanalysis-server.onrender.com/fetch/hr/'+user.profiles.hackerrank.username);
         hr = hr.data.payload;
         if(!hr.ds_score){
             hr.ds_score=0;
@@ -374,7 +374,7 @@ const fetchNewUserScore = asyncHandler(async (req,res)=>{
         user.profiles.hackerrank.scores = hrscore;
 
         //fetch from leetcode
-        lc = await axios.get('http://localhost:'+process.env.PORT+'/fetch/lc/'+user.profiles.leetcode.username);
+        lc = await axios.get('https://resultanalysis-server.onrender.com/fetch/lc/'+user.profiles.leetcode.username);
         lc = lc.data.payload;
         if(!lc.noOfProblemsSolved){
             lc.noOfProblemsSolved = 0;
@@ -401,7 +401,7 @@ const fetchNewUserScore = asyncHandler(async (req,res)=>{
         
 
         //fetch from codechef
-        cc = await axios.get('http://localhost:'+process.env.PORT+'/fetch/cc/'+user.profiles.codechef.username);
+        cc = await axios.get('https://resultanalysis-server.onrender.com/fetch/cc/'+user.profiles.codechef.username);
         cc = cc.data.payload;
         if(!cc.noOfProblemsSolved){
             cc.noOfProblemsSolved = 0;
@@ -428,7 +428,7 @@ const fetchNewUserScore = asyncHandler(async (req,res)=>{
         user.profiles.codechef.scores = ccscore;
 
         //fetch from codeforces
-        cf = await axios.get('http://localhost:'+process.env.PORT+'/fetch/cf/'+user.profiles.codeforces.username);
+        cf = await axios.get('https://resultanalysis-server.onrender.com/fetch/cf/'+user.profiles.codeforces.username);
         cf = cf.data.payload;
         if(!cf.noOfProblemsSolved){
             cf.noOfProblemsSolved = 0;
@@ -455,7 +455,7 @@ const fetchNewUserScore = asyncHandler(async (req,res)=>{
         
 
         //fetch from interviewbit       
-        ib = await axios.get('http://localhost:'+process.env.PORT+'/fetch/ib/'+user.profiles.interviewbit.username);
+        ib = await axios.get('https://resultanalysis-server.onrender.com/fetch/ib/'+user.profiles.interviewbit.username);
         ib = ib.data.payload;
         if(!ib.noOfProblemsSolved){
             ib.noOfProblemsSolved = 0;
@@ -473,7 +473,7 @@ const fetchNewUserScore = asyncHandler(async (req,res)=>{
         user.profiles.interviewbit.scores = ibscore;
         
         //fetch from spoj     
-        spoj = await axios.get('http://localhost:'+process.env.PORT+'/fetch/spoj/'+user.profiles.spoj.username);
+        spoj = await axios.get('https://resultanalysis-server.onrender.com/fetch/spoj/'+user.profiles.spoj.username);
         spoj = spoj.data.payload;
         if(!spoj.noOfProblemsSolved){
             spoj.noOfProblemsSolved = 0;
@@ -531,7 +531,7 @@ const fetchScoreIndividual = asyncHandler(async(req,res)=>{
 
         //fetch from hackerrank
         // console.log(user.profiles.hackerrank.scores);
-        hr = await axios.get('http://localhost:'+process.env.PORT+'/fetch/hr/'+user.profiles.hackerrank.username);
+        hr = await axios.get('https://resultanalysis-server.onrender.com/fetch/hr/'+user.profiles.hackerrank.username);
         hr = hr.data.payload;
         if(!hr.ds_score){
             hr.ds_score=0;
@@ -551,7 +551,7 @@ const fetchScoreIndividual = asyncHandler(async(req,res)=>{
         user.profiles.hackerrank.scores = hrscore;
 
         //fetch from leetcode
-        lc = await axios.get('http://localhost:'+process.env.PORT+'/fetch/lc/'+user.profiles.leetcode.username);
+        lc = await axios.get('https://resultanalysis-server.onrender.com/fetch/lc/'+user.profiles.leetcode.username);
         lc = lc.data.payload;
         if(!lc.noOfProblemsSolved){
             lc.noOfProblemsSolved = 0;
@@ -579,7 +579,7 @@ const fetchScoreIndividual = asyncHandler(async(req,res)=>{
         
 
         //fetch from codechef
-        cc = await axios.get('http://localhost:'+process.env.PORT+'/fetch/cc/'+user.profiles.codechef.username);
+        cc = await axios.get('https://resultanalysis-server.onrender.com/fetch/cc/'+user.profiles.codechef.username);
         cc = cc.data.payload;
         if(!cc.noOfProblemsSolved){
             cc.noOfProblemsSolved = 0;
@@ -605,7 +605,7 @@ const fetchScoreIndividual = asyncHandler(async(req,res)=>{
         user.profiles.codechef.scores = ccscore;
 
         //fetch from codeforces
-        cf = await axios.get('http://localhost:'+process.env.PORT+'/fetch/cf/'+user.profiles.codeforces.username);
+        cf = await axios.get('https://resultanalysis-server.onrender.com/fetch/cf/'+user.profiles.codeforces.username);
         cf = cf.data.payload;
         if(!cf.noOfProblemsSolved){
             cf.noOfProblemsSolved = 0;
@@ -632,7 +632,7 @@ const fetchScoreIndividual = asyncHandler(async(req,res)=>{
         
 
         //fetch from interviewbit       
-        ib = await axios.get('http://localhost:'+process.env.PORT+'/fetch/ib/'+user.profiles.interviewbit.username);
+        ib = await axios.get('https://resultanalysis-server.onrender.com/fetch/ib/'+user.profiles.interviewbit.username);
         ib = ib.data.payload;
         if(!ib.noOfProblemsSolved){
             ib.noOfProblemsSolved = 0;
@@ -650,7 +650,7 @@ const fetchScoreIndividual = asyncHandler(async(req,res)=>{
         user.profiles.interviewbit.scores = ibscore;
         
         //fetch from spoj     
-        spoj = await axios.get('http://localhost:'+process.env.PORT+'/fetch/spoj/'+user.profiles.spoj.username);
+        spoj = await axios.get('https://resultanalysis-server.onrender.com/fetch/spoj/'+user.profiles.spoj.username);
         spoj = spoj.data.payload;
         if(!spoj.noOfProblemsSolved){
             spoj.noOfProblemsSolved = 0;
@@ -773,7 +773,7 @@ const getAllBatchScores = asyncHandler(async (req,res)=>{
         const resObj = {}
         const batch = batches[i];
         const arr=[];
-        await axios.get('http://localhost:5000/score/getScores/'+batch.batchname)
+        await axios.get('https://resultanalysis-server.onrender.com/score/getScores/'+batch.batchname)
                     .then(res=>{
                         res.data.forEach((item,index)=>{
                             arr.push({
