@@ -30,8 +30,8 @@ app.use('/register',require('./routes/register'));
 app.use('/batch',require('./routes/batch'));
 app.use('/user',require('./routes/user'));
 app.use('/score',require('./routes/score'));
-// app.use('/fetch',require('./routes/fetch'));
-app.use('/fetch',fetchapp)
+app.use('/fetch',require('./routes/fetch'));
+// app.use('/fetch',fetchapp)
 
 // Schedule the cron job to run at 12:00
 
@@ -61,9 +61,6 @@ const dailyUpdate = async ()=>{
 cron.schedule('20 00 * * *', () => {
     dailyUpdate();
 });
-
-
-   
 
 
 //server connection
